@@ -52,6 +52,39 @@ pt.launch({headless: false, executablePath:"C:/Program Files/Google/Chrome/Appli
 
   // clicking työpöytä page 
 
+  
+  // Click the "Työpöytä" button
+
+  // Wait for the "Työpöytä" link using XPath
+  await page.waitForXPath('//a[contains(text(), "Työpöytä")]');
+
+  // Click the "Työpöytä" link
+  const [tyopoytaLink] = await page.$x('//a[contains(text(), "Työpöytä")]');
+  await tyopoytaLink.click();
+
+
+  /*
+  await page.waitForSelector('#6637', { visible: true });
+  await page.click('#6637');*/
+
+  /* Wait for some time after clicking "Työpöytä"
+  await page.waitForTimeout(5000);
+  
+  const [yhKurssiLink] = await page.$x('//a[contains(text(), "YKT/LÄHIOPETUS 23-24")]');
+  if (yhKurssiLink) {
+    await yhKurssiLink.click();
+  } else {
+    console.error('Link not found.');
+  }
+*/
+  /*
+  await page.waitForSelector('#yui_3_17_2_1_1699808719998_56', { visible: true, timeout: 6000 });
+  await page.click('#yui_3_17_2_1_1699808719998_56');*/
+
+  
+  
+
+
   console.log("You can close the browser manually.");
 
 });
