@@ -1,9 +1,13 @@
 const pt = require('puppeteer');
 
-// 
+/*const browser = await puppeteer.launch({
+  headless: false,
+  executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
+})*/
 
 // Launch puppeteer and a new page
-pt.launch({headless: false}).then
+pt.launch({headless: false, executablePath:"C:/Program Files/Google/Chrome/Application/chrome.exe",}).then
+
 (async browser => {
 
   require('dotenv').config();
